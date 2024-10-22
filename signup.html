@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="file:///D:/Users/swebb6/Downloads/e.png" type="image/png">
+    <title>Learn Languages | Sign Up</title>
+    <script>
+        function seePassword() {
+            var seeNoEvil = document.getElementById('seeNoneToAll').textContent;
+            if (seeNoEvil == '🙈') {
+                document.getElementById('seeNoneToAll').textContent = '🐵';
+                document.getElementById('pw1a-2').type = 'text';
+            } else {
+                document.getElementById('seeNoneToAll').textContent = '🙈';
+                document.getElementById('pw1a-2').type = 'password';
+            }
+        }
+    </script>
+    <style>
+        button:hover {
+            cursor: pointer;
+        }
+        body {
+           font-family: Arial, Helvetica, sans-serif
+        }
+        #GB {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create your username and password</h1>
+    <label for="txt1a-2">Username:</label>
+    <input type="text" name="set1-b" id="txt1a-2">
+    <br>
+    <label for="pw1a-2">Password:</label>
+    <input type="password" name="set1-b" id="pw1a-1">
+    <button type="button" onclick="seePassword()" id="seeNoneToAll">🙈</button><br>
+    <button onclick="location.href='D:Users/swebb6/Documents/GitHub/Projects/login.html'" style="user-select: none;" id="GB">Go Back</button>
+    <button type="submit" onclick="alert('Account created'); localtorage.setItem('signUpUsername', document.getElementById('txt1a-2').value);">
+        Create Account
+    </button>
+</body>
+</html>
