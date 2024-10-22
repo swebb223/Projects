@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="file:///D:/Users/swebb6/Downloads/e.png" type="image/png">
+    <title>Learn Languages | Login</title>
+    <script>
+        function seePassword() {
+            var toggleButton = document.getElementById('seeNoneToAll');
+            var passwordField = document.getElementById('pw1a-1');
+            if (toggleButton.textContent === '🙈') {
+                toggleButton.textContent = '🐵';
+                passwordField.type = 'text'; // Show password
+                passwordField.title = 'Hide password' // Change title to "Hide password"
+            } else {
+                toggleButton.textContent = '🙈';
+                passwordField.type = 'password'; // Hide password
+                passwordField.title = 'Show Password' // Change title to "Show Password"
+            }
+        }
+
+        function findUser() {
+            var username = document.getElementById('txt1a-1').value; // Use .value
+            var signUpUsername = localStorage.getItem('signUpUsername'); // Retrieve from localStorage
+            if (username === signUpUsername) {
+                alert(`Welcome ${username}!`); // Use sanitized username
+            } else {
+                alert("User not found.");
+            }
+        }
+    </script>
+    <style>
+        button:hover {
+            cursor: pointer;
+        }
+        #caa {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #caa:hover {
+            color: darkblue;
+        }
+        body {
+           font-family: Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>What is your username and password?</h1>
+        <form method="POST" action="/login">
+            <label for="txt1a-1">Username:</label>
+            <input type="text" name="username" id="txt1a-1" placeholder="Iam A. User" required>
+            <br>
+            <label for="pw1a-1">Password:</label>
+            <input type="password" name="password" id="pw1a-1" placeholder="letmein" required>
+            <button type="button" aria-label="Toggle password visibility" onclick="seePassword()" id="seeNoneToAll" title="Show Password">🙈</button>
+            <br>
+            <a href="D:Users/swebb6/Documents/GitHub/Projects/signup.html" id="caa">Create an account</a>
+            <br>
+            <button type="button" onclick="findUser();">Login to account</button>
+        </form>
+    </section>
+</body>
+</html>
